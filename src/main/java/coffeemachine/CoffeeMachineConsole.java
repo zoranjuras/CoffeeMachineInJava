@@ -3,8 +3,6 @@ package coffeemachine;
 import java.sql.*;
 import java.util.*;
 
-import coffeemachine.repositories.CoffeeMachineRepository;
-import coffeemachine.repositories.TransactionRepository;
 import coffeemachine.repositories.*;
 
 public class CoffeeMachineConsole {
@@ -34,7 +32,7 @@ public class CoffeeMachineConsole {
         if(!loadedSuccessfully) {
             System.out.println("Coffee machine status file is not found. Using default values.");
         }
-        System.out.println("Welcome to Coffee Machine 2.5 version by Zoran");
+        System.out.println("Welcome to Coffee Machine 2.5.2 version by Zoran");
         System.out.println("Mantained by administrator " + machine.getAdminUsername() +
                 " with password " + machine.getAdminPassword());
         System.out.println("Located on Avenija plišanih majmuna 99");

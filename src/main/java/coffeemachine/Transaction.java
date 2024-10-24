@@ -9,12 +9,14 @@ public class Transaction {
     private boolean action;
     private String missing;
     private String CoffeeTypeName;
+    private Timestamp timestamp;
 
-    public Transaction(int coffeeTypeID, boolean action, String missing) {
+    public Transaction(int coffeeTypeID, boolean action, String missing, Timestamp timestamp) {
 
         this.coffeeTypeID = coffeeTypeID;
         this.action = action;
         this.missing = missing;
+        this.timestamp = timestamp;
     }
 
     public Transaction() {}
@@ -48,10 +50,11 @@ public class Transaction {
     }
 
     public Timestamp getTimestamp() {
-        return new Timestamp(System.currentTimeMillis());
+        return timestamp;
     }
 
     public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getMissing() {

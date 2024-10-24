@@ -26,7 +26,7 @@ public class CoffeeMachine {
         this.money = money;
         this.conn = conn;
 
-    CoffeeTypeRepository ct = new CoffeeTypeRepository(conn);
+        CoffeeTypeRepository ct = new CoffeeTypeRepository(conn);
         coffeeTypes = ct.getListOfRecipes();
     }
 
@@ -115,7 +115,7 @@ public class CoffeeMachine {
             success = false;
         }
 
-        Transaction transaction = new Transaction(coffeeType.getCoffeeTypeID(), success, missing);
+        Transaction transaction = new Transaction(coffeeType.getCoffeeTypeID(), success, missing, new Timestamp(System.currentTimeMillis()));
         TransactionRepository transactionRepository = new TransactionRepository(conn);
         transactionRepository.insertTransaction(transaction);
     }

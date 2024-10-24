@@ -44,7 +44,7 @@ public class TransactionRepository {
             while (rs.next()){
                 Transaction t = new Transaction();
                 t.setId(rs.getInt("ID_Transaction"));
-                t.setTimestamp(Timestamp.valueOf(rs.getString("time_stamp")));
+                t.setTimestamp(rs.getTimestamp("time_stamp"));
                 t.setMissing(rs.getString("missing_ingredient"));
                 t.setCoffeeTypeName(rs.getString("CoffeeName"));
 

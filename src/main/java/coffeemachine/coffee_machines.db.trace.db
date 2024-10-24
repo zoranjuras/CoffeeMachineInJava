@@ -1,0 +1,776 @@
+2023-11-11 21:20:48.645118+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "R.INGREDIENTID" not found; SQL statement:
+SELECT STRING_AGG(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_cofee_type = r.coffee_typeID
+JOIN ingredient i ON r.ingredientID = i.ID_ingredient
+WHERE c.name = 'espresso' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:136)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-11 21:22:46.012114+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "C.ID_COFEE_TYPE" not found; SQL statement:
+SELECT STRING_AGG(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_cofee_type = r.coffee_typeID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-11 21:23:03.523155+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "R.COFFEE_TYPEID" not found; SQL statement:
+SELECT STRING_AGG(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_coffee_type = r.coffee_typeID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-11 21:26:37.703419+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT GROUP_CONCAT(CAST(ingredient_amount AS VARCHAR)[*], ', ') AS ingredient_amounts\000d\000aFROM recipe r\000d\000aJOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID\000d\000aJOIN ingredient i ON r.ingredient_ID = i.ID_ingredient\000d\000aWHERE c.name = 'espresso'"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT GROUP_CONCAT(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42001-224]
+2023-11-11 21:28:05.498053+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "R.COFFEE_TYPEID" not found; SQL statement:
+SELECT STRING_AGG(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_coffee_type = r.coffee_typeID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:137)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1177)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-11 21:31:34.540645+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT group_concat(CAST(ingredient_amount AS VARCHAR)[*], ', ') AS ingredient_amounts\000d\000aFROM recipe r\000d\000aJOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID\000d\000aJOIN ingredient i ON r.ingredient_ID = i.ID_ingredient\000d\000aWHERE c.name = 'espresso'"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT group_concat(CAST(ingredient_amount AS VARCHAR), ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42001-224]
+2023-11-11 21:40:53.075287+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT group_concat((CAST(ingredient_amount AS VARCHAR) [*]separator  ', ') AS ingredient_amounts\000d\000aFROM recipe r\000d\000aJOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID\000d\000aJOIN ingredient i ON r.ingredient_ID = i.ID_ingredient\000d\000aWHERE c.name = 'espresso'"; expected "[, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+SELECT group_concat((CAST(ingredient_amount AS VARCHAR) separator  ', ') AS ingredient_amounts
+FROM recipe r
+JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID
+JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient
+WHERE c.name = 'espresso' [42001-224]
+2023-11-11 21:48:49.725904+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "IDTransaction" not found [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:337)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:80)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:09:23.848970+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "c.name" not found [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:85)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:11:06.266398+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COFFEE_TYPE.NAME" not found; SQL statement:
+SELECT ID_Transaction, time_stamp, missing_ingredient, coffee_type.name FROM transaction t join coffee_type c on t.coffee_type_ID = c.ID_coffee_type [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:78)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:12:08.266233+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "COFFEE_TYPE.NAME" not found; SQL statement:
+SELECT ID_Transaction, time_stamp, missing_ingredient, coffee_type.name FROM transaction t join coffee_type c on t.coffee_type_ID = c.ID_coffee_type [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.command.query.Select.prepareExpressions(Select.java:1170)
+	at org.h2.command.query.Query.prepare(Query.java:218)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:94)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:78)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:13:13.247940+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "c.name" not found [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:85)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:17:22.166521+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:157)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:14)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-11 22:17:53.209417+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT ID_Transaction, time_stamp, missing_ingredient, c.name, \000a FROM transaction t, \000a [*]join coffee_type c on t.coffee_type_ID = c.ID_coffee_type\000a"; expected "identifier"; SQL statement:
+SELECT ID_Transaction, time_stamp, missing_ingredient, c.name, 
+ FROM transaction t, 
+ join coffee_type c on t.coffee_type_ID = c.ID_coffee_type
+ [42001-224]
+2023-11-11 22:19:36.685803+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "c.name" not found [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:85)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-11 22:21:40.789134+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "c.name" not found [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at t4_zoran.coffeemachine.DatabaseManager.transactionList(DatabaseManager.java:83)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.adminMenu(CoffeeMachineConsole.java:136)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.start(CoffeeMachineConsole.java:50)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:21)
+2023-11-12 13:39:10.736151+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "C.ID_COFFEE_TYPE" must be in the GROUP BY list; SQL statement:
+SELECT c.ID_coffee_type, group_concat(r.ingredient_amount separator  ', ') AS ingredient_amounts
+    FROM recipe r
+    JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID
+    JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient [90016-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:644)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:266)
+	at org.h2.command.query.Select.updateAgg(Select.java:539)
+	at org.h2.command.query.Select.gatherGroup(Select.java:522)
+	at org.h2.command.query.Select.queryGroup(Select.java:488)
+	at org.h2.command.query.Select.queryWithoutCache(Select.java:828)
+	at org.h2.command.query.Query.queryWithoutCacheLazyCheck(Query.java:197)
+	at org.h2.command.query.Query.query(Query.java:520)
+	at org.h2.command.query.Query.query(Query.java:483)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:252)
+	at org.h2.command.Command.executeQuery(Command.java:192)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:257)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-12 13:40:03.094836+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT group_concat(c.ID_coffee_type[*], r.ingredient_amount separator  ', ') AS ingredient_amounts\000d\000a    FROM recipe r\000d\000a    JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID\000d\000a    JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient"; expected "(, ., [, ., ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ORDER BY, SEPARATOR, )"; SQL statement:
+SELECT group_concat(c.ID_coffee_type, r.ingredient_amount separator  ', ') AS ingredient_amounts
+    FROM recipe r
+    JOIN coffee_type c ON c.ID_coffee_type = r.coffee_type_ID
+    JOIN ingredient i ON r.ingredient_ID = i.ID_ingredient [42001-224]
+2023-11-12 15:02:35.707265+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "WATER_RECIPE.COFFEE_TYPEID" not found; SQL statement:
+SELECT 
+    c.ID_coffee_type,
+    c.name AS coffee_type_name,
+    MAX(CASE WHEN water.name = 'water' THEN water_recipe.ingredient_amount ELSE 0 END) AS amount_of_water,
+    MAX(CASE WHEN milk.name = 'milk' THEN milk_recipe.ingredient_amount ELSE 0 END) AS amount_of_milk,
+    MAX(CASE WHEN beans.name = 'coffee beans' THEN beans_recipe.ingredient_amount ELSE 0 END) AS amount_of_coffee_beans,
+    MAX(c.price) AS price
+FROM coffee_type c
+LEFT JOIN recipe water_recipe ON c.ID_coffee_type = water_recipe.coffee_typeID
+LEFT JOIN ingredient water ON water_recipe.ingredientID = water.ID_ingredient
+LEFT JOIN recipe milk_recipe ON c.ID_coffee_type = milk_recipe.coffee_typeID
+LEFT JOIN ingredient milk ON milk_recipe.ingredientID = milk.ID_ingredient
+LEFT JOIN recipe beans_recipe ON c.ID_coffee_type = beans_recipe.coffee_typeID
+LEFT JOIN ingredient beans ON beans_recipe.ingredientID = beans.ID_ingredient
+GROUP BY c.ID_coffee_type, c.name [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:148)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:635)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.command.query.Select.preparePlan(Select.java:1320)
+	at org.h2.command.query.Select.preparePlan(Select.java:1202)
+	at org.h2.command.query.Query.prepare(Query.java:219)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-12 15:04:53.291910+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "WATER_RECIPE.INGREDIENTID" not found; SQL statement:
+SELECT 
+    c.ID_coffee_type,
+    c.name AS coffee_type_name,
+    MAX(CASE WHEN water.name = 'water' THEN water_recipe.ingredient_amount ELSE 0 END) AS amount_of_water,
+    MAX(CASE WHEN milk.name = 'milk' THEN milk_recipe.ingredient_amount ELSE 0 END) AS amount_of_milk,
+    MAX(CASE WHEN beans.name = 'coffee beans' THEN beans_recipe.ingredient_amount ELSE 0 END) AS amount_of_coffee_beans,
+    MAX(c.price) AS price
+FROM coffee_type c
+LEFT JOIN recipe water_recipe ON c.ID_coffee_type = water_recipe.coffee_type_ID
+LEFT JOIN ingredient water ON water_recipe.ingredientID = water.ID_ingredient
+LEFT JOIN recipe milk_recipe ON c.ID_coffee_type = milk_recipe.coffee_typeID
+LEFT JOIN ingredient milk ON milk_recipe.ingredientID = milk.ID_ingredient
+LEFT JOIN recipe beans_recipe ON c.ID_coffee_type = beans_recipe.coffee_typeID
+LEFT JOIN ingredient beans ON beans_recipe.ingredientID = beans.ID_ingredient
+GROUP BY c.ID_coffee_type, c.name [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:635)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.command.query.Select.preparePlan(Select.java:1320)
+	at org.h2.command.query.Select.preparePlan(Select.java:1202)
+	at org.h2.command.query.Query.prepare(Query.java:219)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-12 15:05:55.992908+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "WATER_RECIPE.INGREDIENTID" not found; SQL statement:
+SELECT 
+    c.ID_coffee_type,
+    c.name AS coffee_type_name,
+    MAX(CASE WHEN water.name = 'water' THEN water_recipe.ingredient_amount ELSE 0 END) AS amount_of_water,
+    MAX(CASE WHEN milk.name = 'milk' THEN milk_recipe.ingredient_amount ELSE 0 END) AS amount_of_milk,
+    MAX(CASE WHEN beans.name = 'coffee beans' THEN beans_recipe.ingredient_amount ELSE 0 END) AS amount_of_coffee_beans,
+    MAX(c.price) AS price
+FROM coffee_type c
+LEFT JOIN recipe water_recipe ON c.ID_coffee_type = water_recipe.coffee_type_ID
+LEFT JOIN ingredient water ON water_recipe.ingredientID = water.ID_ingredient
+LEFT JOIN recipe milk_recipe ON c.ID_coffee_type = milk_recipe.coffee_type_ID
+LEFT JOIN ingredient milk ON milk_recipe.ingredient_ID = milk.ID_ingredient
+LEFT JOIN recipe beans_recipe ON c.ID_coffee_type = beans_recipe.coffee_type_ID
+LEFT JOIN ingredient beans ON beans_recipe.ingredient_ID = beans.ID_ingredient
+GROUP BY c.ID_coffee_type, c.name [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:244)
+	at org.h2.expression.ExpressionColumn.optimizeOther(ExpressionColumn.java:226)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:213)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:147)
+	at org.h2.expression.Expression.optimizeCondition(Expression.java:148)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:635)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.table.TableFilter.createIndexConditions(TableFilter.java:644)
+	at org.h2.command.query.Select.preparePlan(Select.java:1320)
+	at org.h2.command.query.Select.preparePlan(Select.java:1202)
+	at org.h2.command.query.Query.prepare(Query.java:219)
+	at org.h2.command.Parser.prepareCommand(Parser.java:489)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1109)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1096)
+	at org.h2.server.web.WebThread.process(WebThread.java:190)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-11-12 16:34:00.324082+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:164)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-12 16:34:16.992455+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:164)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-12 16:34:26.112440+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:164)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-12 16:35:09.228598+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:164)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-12 16:35:59.589798+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:164)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:15)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-13 09:30:12.879125+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COFFEE_MACHINE" not found; SQL statement:
+select * from coffee_machine c
+join admin a on c.admin_ID = a.ID_admin
+where c.name = 'kr01' [42102-224]
+2023-11-13 10:16:04.114303+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:172)
+	at t4_zoran.coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:17)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
+2023-11-13 10:16:16.337859+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "kr01" [22018-224]
+2023-11-13 10:25:28.888022+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "kr01" [22018-224]
+2023-11-13 10:29:45.992792+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "kr01" [22018-224]
+2023-11-13 13:26:49.611471+01:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1039)
+	at org.h2.server.web.WebApp.process(WebApp.java:227)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.WebThread.process(WebThread.java:154)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 22 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: H:/krapina/HITA2023_CoffeeMachine/src/t4_zoran/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 16 more
+2024-09-25 17:17:45.148866+02:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.test(WebApp.java:978)
+	at org.h2.server.web.WebApp.process(WebApp.java:242)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.WebThread.process(WebThread.java:154)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2024-09-25 17:37:11.292493+02:00 database: wrong user or password; user: "LOJZA"
+org.h2.message.DbException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:288)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.test(WebApp.java:978)
+	at org.h2.server.web.WebApp.process(WebApp.java:242)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.WebThread.process(WebThread.java:154)
+	at org.h2.server.web.WebThread.run(WebThread.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2024-09-25 17:51:50.351815+02:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/MyJavaProjects/machine/src/main/java/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1546)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:371)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:252)
+	at coffeemachine.CoffeeMachineConsole.makeDBConnection(CoffeeMachineConsole.java:173)
+	at coffeemachine.CoffeeMachineConsole.main(CoffeeMachineConsole.java:20)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/MyJavaProjects/machine/src/main/java/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]" [50000-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 19 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/MyJavaProjects/machine/src/main/java/coffeemachine/coffee_machines.db.mv.db [2.2.224/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:286)
+	... 13 more
